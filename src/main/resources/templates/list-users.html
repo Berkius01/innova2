@@ -1,49 +1,47 @@
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <title>List Users</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
           crossorigin="anonymous" />
 </head>
-
 <body>
-
 <div class="container">
-
     <h3>List USERS</h3>
-
     <hr/>
-
     <table class="table table-bordered table-striped">
-
         <thead>
-
         <tr>
+            <th>ID</th>
             <th>Username</th>
             <th>Email</th>
             <th>Role</th>
-
         </tr>
         </thead>
         <tbody>
-        <tr th:each="users: ${users}">
-            <td th:text="${users.username}" />
-            <td th:text="${users.email}" />
-            <td th:text="${users.role}" />
-
-            <td
-
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.role}"></td>
+            <td>
+                <form th:action="@{'/admin/user/delete/' + ${user.id}}" method="POST">
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button type="submit" class="btn btn-outline-danger">User sil</button>
+                </form>
+            </td>
+            <td>
+                <form th:action="@{'/admin/user/' + ${user.id}}" method="POST">
+                    <input type="hidden" name="_method" value="PUT" />
+                    <button type="submit" class="btn btn-outline-info">User Güncelle</button>
+                </form>
+            </td>
         </tr>
         </tbody>
-
     </table>
 </div>
-
-
 </body>
-
 </html>

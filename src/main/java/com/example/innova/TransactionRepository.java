@@ -14,6 +14,9 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     @Query("SELECT SUM(t.amount) FROM Transaction t WHERE t.user.id = :userId")
     Double findTotalSpendingByUserId(Long userId);
     List<Transaction> findByDateBetween(LocalDate startDate, LocalDate endDate);
+    //@Query("SELECT t FROM Transaction t where t.user_id = :id")
+    @Query("SELECT t FROM Transaction t WHERE t.user.id = :id")
+    List<Transaction> getAllByUserModel(Long id);
 
 
 }
