@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Add User</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous" />
+</head>
+<body>
+<section class="vh-100 bg-image"
+         style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAhg6dZ4CU4UDHpwTAJRlPb9dqDP9_ZrCtw&s');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Add New User Record</h2>
+
+                            <form action="http://localhost:8080/transactions/admin/transaction" method="POST">
+
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="amount"/>
+                                    <label class="form-label" for="form3Example1cg">Amount</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input   type="text" id="form3Example3cg" class="form-control form-control-lg" name="description"/>
+                                    <label class="form-label" for="form3Example3cg">Description</label>
+                                </div>
+
+
+
+
+
+
+
+
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" name="add"
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Transaction Yap</button>
+                                </div>
+
+                                <label class="form-label" for="form3Example4cdg">
+
+                                </label>
+
+
+                                <label class="form-label" for="form3Example4cdg">
+                                </label>
+
+
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

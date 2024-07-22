@@ -30,9 +30,14 @@ public class SecurityConfiguration{
         registry.requestMatchers("/home","/register/**").permitAll();
         registry.requestMatchers("/admin/**").hasRole("ADMIN");
         registry.requestMatchers("/user/**").hasRole("USER");
+        registry.requestMatchers("/user/**").hasRole("ADMIN");
         registry.anyRequest().authenticated();
     })
-            .formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
+            .formLogin(httpSecurityFormLoginConfigurer -> {
+                httpSecurityFormLoginConfigurer
+                .successHandler(new AuthSuccessHandler())
+                .permitAll();
+            })
     .build();
   }
 

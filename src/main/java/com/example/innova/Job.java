@@ -59,6 +59,6 @@ public class Job {
 
         List<Transaction> transactions = transactionRepository.findByDateBetween(startDate, endDate);
         double totalSpending = transactions.stream().mapToDouble(Transaction::getAmount).sum();
-        System.out.println("Total spending for " + period + ": " + totalSpending);
+        System.out.println("Total Harcama " + period + ": " + totalSpending);
     }
 }
